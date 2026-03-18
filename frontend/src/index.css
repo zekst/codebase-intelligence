@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ─── React Flow overrides ───────────────────────────────────────────────── */
+
+.react-flow__pane {
+  cursor: grab;
+}
+
+.react-flow__pane:active {
+  cursor: grabbing;
+}
+
+.react-flow__node {
+  transition: opacity 0.3s ease;
+}
+
+.react-flow__edge {
+  transition: opacity 0.3s ease;
+}
+
+.react-flow__minimap {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls {
+  gap: 2px;
+}
+
+.react-flow__controls button {
+  border-radius: 8px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.react-flow__controls button svg {
+  max-width: 12px;
+  max-height: 12px;
+}
+
+/* Remove default React Flow node styles so our custom node shines */
+.react-flow__node-custom {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  font-size: inherit !important;
+}
+
+.react-flow__node-custom.selected {
+  box-shadow: none !important;
+}
+
+/* Animated edge dash */
+.react-flow__edge.animated path {
+  animation: dashmove 0.5s linear infinite;
+}
+
+@keyframes dashmove {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+
+::selection {
+  background: rgba(129, 140, 248, 0.3);
+  color: #e2e8f0;
+}
