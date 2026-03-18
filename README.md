@@ -2,6 +2,8 @@
 
 A static analysis platform that scans a codebase, builds a dependency graph, and lets you explore it visually or query it with an AI assistant.
 
+![Codebase Intelligence](assets/chatSuuport.png)
+
 ## Features
 
 - **Multi-language support** — TypeScript, JavaScript, Python, Java, Go
